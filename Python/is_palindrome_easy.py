@@ -1,3 +1,4 @@
+#my first solution:
 #Complexity: O(n)
 #can be improved
 class Solution(object):
