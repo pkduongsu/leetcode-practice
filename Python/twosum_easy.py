@@ -15,5 +15,21 @@ class Solution(object):
             
         return []
 
-#Better Solution Requires Hashmap. Come back with that studied.
+#Better Solution Requires Hashmap
+#Time: O(n)
+#Memory: O(n)
+class Solution(object):
+        def twoSum(self, nums, target):
+            prevMap = {}
+                
+            for i in range(0, len(nums)):
+                #hashmap (value: key, index: value)
+                diff = target - nums[i]
+                if diff in prevMap: 
+                    return [prevMap[diff], i] #first index -> key exists in hashmap, second recent index
+                else:
+                    prevMap[nums[i]] = i #add the traversed value to the hashmap
+                        
+            return []      
+        
         
