@@ -19,6 +19,7 @@ def isAnagram(self, s: str, t: str) -> bool:
             del count[char]
     
     return len(count) == 0
+
 #using hashtable: 
 def isAnagram(self, s: str, t: str) -> bool:
     if len(s) != len(t):

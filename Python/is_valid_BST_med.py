@@ -16,7 +16,7 @@ class Solution:
             if not node: #for any recursive, hit null -> return 
                 return True
 
-            if not (node.val < right and node.val > left):
+            if not (node.val < right and node.val > left): #if the value is not in the defined range, return False
                 return False
 
             return (isValidNode(node.left, left, node.val) 
