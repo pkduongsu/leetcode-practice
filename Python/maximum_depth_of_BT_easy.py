@@ -1,3 +1,7 @@
+from collections import deque
+from typing import Optional
+
+
 #BFS:
 #Time: O(n) - worst case
 class Solution:
@@ -46,7 +50,8 @@ class Solution:
 
 #! BIG O space complexity measures maximum memory used at any moment during the run (peak/working set), not what remains in the end.
 
-#recursive DFS: Time: O(n) - worst case
+#recursive DFS: Time: O(n) - worst case - where n is the number of nodes in the tree
+#Space: Worst case: O(n)
 #Space:
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
@@ -56,6 +61,7 @@ class Solution:
         return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
     
 #iterative DFS: Time (O(n))
+#Space: O(n) where n is the number of nodes in the tree (stack stores all the nodes in the tree)
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         stack = [[root, 1]]
