@@ -1,3 +1,4 @@
+from typing import List
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         #input: array of distinct integers nums, sorted in ascending order -> nums: List[int]
