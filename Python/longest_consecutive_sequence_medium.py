@@ -53,6 +53,18 @@ class Solution:
                 maxLength = max(maxLength, length)
 
         return maxLength
+    
+           #The major difference is in the guard condition to check for sequences beginnings
+       #for the first solution:
+       # -> check every possible sequences for every number in the array
+       # => complexity O(n^2)
+       #for the second solution, the internal loop to find sequences only gets initialize when 
+       #a sequence beginning is found
+       #-> eventually only go through sequences beginning and its possible consecutive elements, which
+       #are also in the input array
+       #as a result, will go through every element of the input array only once
+       #=> massively reduce complexity to O(n)
+       #Space: because we need a set of nums array, complexity will also be O(n)
 
 
          
