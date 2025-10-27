@@ -38,6 +38,46 @@ class Solution:
         #-> Time complexity(O(n) + O(n) = O(2n) => O(n)) - as in time analysis, constants are removed.
         #-> Space complexity : O(k), where k is the number of unique characters . for english, lowercase char, k <= 26 -> treated as O(1)
                 
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        #input: string s, string t
+        #output: bool: true if is anagram, not false
+
+        #anagram: a string that has exact same characters as another string
+
+        #def isAnagram(s: str, t: str) -> bool
+
+        #easiest solution is just to check equality of the sorted strings
+        #-> Time complexity depends on the complexity of sorting algo
+        
+        #return sorted(s) == sorted(t)
+        #Time: nlogn: where n is the length of string 
+        #worst case its not equal -> nlogn + mlogm : len of string s and len of string t
+        #space: n + m , len of 2 strings
+
+        #better, solution:
+        #use a hashmap and store the count of each strings
+
+        charMapS = {}
+        charMapT = {}
+        if len(s) != len(t):
+            return False
+
+        #we are sure that both have same length now
+        for i in range(len(s)):
+            charMapS[s[i]] = charMapS.get(s[i], 0) + 1
+            charMapT[t[i]] = charMapT.get(t[i], 0) + 1
+
+        return charMapS == charMapT
+
+        #Time: O(n) length of the string s (same for string t if anagram)
+        #Space: O(n + m): worst case where every char in both strings are unique
+
+        
+
+    
+
+            
         
         
     
